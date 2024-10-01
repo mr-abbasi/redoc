@@ -158,6 +158,8 @@
     "slugify": "~1.4.7",
     "stickyfill": "^1.1.1",
     "swagger2openapi": "^7.0.8",
+    "style-loader": "^3.3.1",
+    "update-notifier": "^6.0.2",
     "url-template": "^2.0.8"
   },
   "size-limit": [

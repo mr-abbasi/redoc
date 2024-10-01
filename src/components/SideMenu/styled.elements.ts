@@ -142,6 +142,10 @@ export const MenuItemLabel = styled.label.attrs((props: MenuItemLabelType) => ({
   padding: 12.5px ${props => props.theme.spacing.unit * 4}px;
   ${({ $depth, $type, theme }) =>
     ($type === 'section' && $depth > 1 && 'padding-left: ' + theme.spacing.unit * 8 + 'px;') || ''}
+  direction: ${({ type, theme }) =>
+  ['section', 'group', 'tag'].indexOf(type || '') > -1 && theme.typography.direction === 'rtl'
+    ? 'rtl'
+    : 'ltr'};
   display: flex;
   justify-content: space-between;
   font-family: ${props => props.theme.typography.headings.fontFamily};
@@ -159,6 +163,7 @@ export const MenuItemLabel = styled.label.attrs((props: MenuItemLabelType) => ({
   }
 
   ${ShelfIcon} {
+    transform: ${({ theme }) => (theme.typography.direction === 'rtl' ? 'rotate(0deg)' : 'none')};
     height: ${({ theme }) => theme.sidebar.arrow.size};
     width: ${({ theme }) => theme.sidebar.arrow.size};
     polygon {
